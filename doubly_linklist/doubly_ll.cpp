@@ -50,22 +50,52 @@ void add_before_data(int x){
         ttemp=temp->prev;
     }
     p=new node;
-    cin>>p->data;   // from picture
+    cin>>p->data; 
     ttemp->next=p;
     p->next=temp;
 }      
 
+                            //  ADD NEW NODE AFTER GIVEN DATA
+                            
+void add_after_data(int x){
+    temp=first;
+    while(temp->data!=x){
+        temp=temp->next;
+        ttemp=temp->next;
+    }
+    p=new node;
+    cin>>p->data;
+    temp->next=p;
+    p->next=ttemp;
+}
 //                             // DELETE A NODE AFTER GIVEN DATA
 
-// void del_node_after(int x){
-//     temp=first;
-//     while(temp->data!=x){
-//         temp=temp->next;
-//     }
-//     ttemp=temp->next;
-//     p=ttemp->next;
-//     temp->
-// }                            
+void del_node_after(int x){
+    temp=first;
+    while(temp->data!=x){
+        temp=temp->next;
+        ttemp=temp->next;
+    }
+    p=ttemp->next;
+    temp->next=p;
+    p->prev=temp;
+    ttemp->next=ttemp->prev=null;
+    delete ttemp;
+}   
+                               // DELETE A NODE BEFORE GIVEN DATA
+                               
+void del_node_before(int x){
+    temp=first;
+    while(temp->data!=x){
+        ttemp=temp;
+        temp=temp->next;
+    }
+    p=temp->next;
+    ttemp->next=p;
+    p->prev=ttemp;
+    temp->next=temp->prev=null;
+    delete temp;
+}                               
 int main(){
     cout<<"enter the node\n";
     createfirst();
@@ -80,9 +110,16 @@ int main(){
     // Add_before_first();
     // cout<<"after adding a node before first node\n";
     // disp();
-    cout<<"enter a node\n";
-    add_before_data(30);
-    cout<<"after adding a node before given data\n";
+    // cout<<"enter a node\n";
+    // add_before_data(30);
+    // cout<<"after adding a node before given data\n";
+    // disp();
+    // cout<<"enter a node\n";
+    // add_after_data(30);
+    // cout<<"after adding a node after given data\n";
+    // disp();
+    del_node_before(40);
+    cout<<"after deleting a node before given data\n";
     disp();
     return 0;
 }
