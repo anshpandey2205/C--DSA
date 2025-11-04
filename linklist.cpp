@@ -131,30 +131,10 @@ void del_sec_last() {
 //         temp=temp->next;
 //     }
 // }
-void swap(){
-    temp=first;
-    ttemp=temp->next;
-    p=ttemp->next;
-    ttemp->next=temp;
-    temp->next=p;
-    first=ttemp;
-}
-void swap_first_last(){
-    q=first;
-    while(temp->next!=null){
-        ttemp=temp;
-        temp=temp->next;
-    }
-    p=q->next;
-    ttemp->next=q;
-    q->next=null;
-    temp->next=p;
-    q=temp;
+                // TO SWAP FIRST AND LAST
 
-}
-void swap_first_last(){
-    temp=first;
-}
+                
+
 int main(){
     init();
     createfirst(10);
@@ -170,9 +150,9 @@ int main(){
 //     cout<<"Before add new Node\n";
 //     Add_before(50,70);
 //     disp();
-//     cout<<" add new Node before first node\n";
-//     Add_before_first(90);
-//     disp();
+    // cout<<" add new Node before first node\n";
+    // Add_before_first(90);
+    // disp();
 //     cout<<" add new Node before last node\n";
 //     Add_before_last(90);
 //     disp();
@@ -188,12 +168,12 @@ int main(){
 //     cout<<" delete second last= \n";
 //     del_sec_last();
 //     disp();
-//     cout<<" Swap = \n";
-//     swap();
-//     disp();
     cout<<" Swap = \n";
-    swap_first_last();
+    swap();
     disp();
+    // cout<<" Swap = \n";
+    // swap_first_last();
+    // disp();
 
     return 0;
 }
