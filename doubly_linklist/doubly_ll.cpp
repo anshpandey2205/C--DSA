@@ -99,34 +99,25 @@ void del_node_before(int x){
 
     //                             //  SWAP LAST AND SECOND LAST
 
-    // void swwap(){
-    //     temp=first;
-    //     while(temp->next!=null){
-    //         temp=temp->next;
-    //         ttemp=temp->prev;
-    //         p=ttemp->prev;
-    //     }
-    //     p->next=temp;
-    //     temp->prev=p;
-    //     temp->next=ttemp;
-    //     ttemp->prev=temp;
-    //     ttemp->next=null;
-    // }  
+    void swwap(){
+        temp=first;
+        while(temp->next!=null){
+            temp=temp->next;
+            ttemp=temp->prev;
+            p=ttemp->prev;
+        }
+        p->next=temp;
+        temp->prev=p;
+        temp->next=ttemp;
+        ttemp->prev=temp;
+        ttemp->next=null;
+    }  
     
     //                               //  SWAP FIRST AND SECOND
                                   
-    // void swap(){
-    //     temp=first;
-    //     while(temp->prev!=null){
-    //     //temp=temp->next;    
-    //     ttemp=temp->next;
-    //     p=ttemp->next;
-    //     }
+    void swap(){
         
-    //     p->prev=temp;
-    //     temp->next=p;
-    //     ttemp->next=temp;
-    //     temp->prev=ttemp;
+    
     }                              
 int main(){
     cout<<"enter the node\n";
@@ -150,14 +141,14 @@ int main(){
     // add_after_data(30);
     // cout<<"after adding a node after given data\n";
     // disp();
-    del_node_before(40);
-    cout<<"after deleting a node before given data\n";
-    disp();
+    // del_node_before(40);
+    // cout<<"after deleting a node before given data\n";
+    // disp();
     // swwap();
     // cout<<"Ater swapping last and last second\n";
     // disp();
-    // swap();
-    // disp();
+    swap();
+    disp();
 
     return 0;
 }

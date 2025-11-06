@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-struct SCLL
-{
+struct SCLL{
     int data;
     SCLL *next;
 };
@@ -38,6 +37,9 @@ void display()
     temp=temp->next;
    }while (temp!=first); 
 }
+
+             // TO SWAP FIRST AND SECOND NODE
+             
 void swap(){
     p=temp=first;
     ttemp=first->next;
@@ -50,6 +52,9 @@ void swap(){
     p->next=q;
     first=ttemp;
 }
+   
+               // TO SWAP LAST AND SECOND LAST
+
 void swap2(){
     temp=first;
     while(temp->next->next!=first){
@@ -70,10 +75,10 @@ int main()
     add_nodes(40);
     add_nodes(50);
     display();
-    // swap();
-    // cout<<"After swapping first and last node\n";
-    // display();
-    swap2();
-    cout<<"After swapping last and last second node\n";
+    swap();
+    cout<<"After swapping first and second node\n";
     display();
+    // swap2();
+    // cout<<"After swapping last and last second node\n";
+    // display();
 }

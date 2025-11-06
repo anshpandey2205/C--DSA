@@ -133,7 +133,18 @@ void del_sec_last() {
 // }
                 // TO SWAP FIRST AND LAST
 
-                
+    void swap_first_last(){
+        q=temp=first;
+        p=first->next;
+        while(temp->data!=null){
+            ttemp=temp;
+            temp=temp->next;
+        }
+        temp->next=p;
+        ttemp->next=q;
+        q->next=null;
+        first=temp;
+    }            
 
 int main(){
     init();
@@ -168,12 +179,12 @@ int main(){
 //     cout<<" delete second last= \n";
 //     del_sec_last();
 //     disp();
-    cout<<" Swap = \n";
-    swap();
-    disp();
     // cout<<" Swap = \n";
-    // swap_first_last();
+    // swap();
     // disp();
+    cout<<" Swap = \n";
+    swap_first_last();
+    disp();
 
     return 0;
 }
