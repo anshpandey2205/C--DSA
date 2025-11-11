@@ -24,7 +24,38 @@ int full(){
 }
 void push(int x){
     if(full()){
+        return;
+    }
         p->top++;
         p->data[p->top]=x;
     }
+int pop(){
+    int x;
+    if(empty()){
+        return -1;
+    } else{
+        x=p->data[p->top];
+        p->top--;
+        return x;
+    }
 }
+    void disp(){
+        for(int i=p->top;i>=0;i--){
+            cout<<p->data[i]<<endl;
+        }
+    } 
+    int main(){
+        init();
+        push(10);
+        push(20);
+        push(30);
+        push(40);
+        push(50);
+        disp();
+        cout<<"after poping\n";
+        pop();
+        pop();
+        disp();
+     return 0;
+    }
+
