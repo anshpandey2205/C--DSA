@@ -5,7 +5,7 @@ struct node{
     int data;
     node *next,*prev;
 };
-node *first,*temp,*ttemp,*p;
+node *first,*temp,*ttemp,*p,*q,*r;
 void createfirst(){
     first =new node;
     cin>>first->data;
@@ -116,8 +116,19 @@ void del_node_before(int x){
     //                               //  SWAP FIRST AND SECOND
                                   
     void swap(){
+        temp=first;
+        ttemp=temp->next;
+        q=ttemp->next;
+        // while(p->next!=null){
+        //     p=p->next;
+        // }
+        ttemp->next=temp;
+        ttemp->prev=null;
+        temp->prev=ttemp;
+        temp->next=q;
+        q->prev=temp;
+        first=ttemp;
         
-    
     }                              
 int main(){
     cout<<"enter the node\n";
@@ -148,6 +159,7 @@ int main(){
     // cout<<"Ater swapping last and last second\n";
     // disp();
     swap();
+    cout<<"after swapping first and second\n";   
     disp();
 
     return 0;
